@@ -6,3 +6,10 @@ dist/
 
 # OS files
 .DS_Store
+
+# Original full-res photo masters — kept locally for `npm run optimize:images`,
+# but not committed (the site ships the optimized .webp copies).
+assets/*.jpg
+assets/*.jpeg
+assets/*.JPG
+assets/*.JPEG
