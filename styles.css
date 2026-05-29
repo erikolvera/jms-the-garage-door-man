@@ -1096,85 +1096,22 @@ header.scrolled {
   text-align: center;
 }
 
-.map-radar {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  border: 1px solid rgba(var(--accent-rgb), 0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.service-map {
+  width: 100%;
+  aspect-ratio: 4 / 3;
   margin-bottom: 2rem;
-}
-
-.map-radar::before {
-  content: '';
-  position: absolute;
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  border: 1px solid rgba(var(--accent-rgb), 0.25);
-  animation: radar-pulse 3s infinite linear;
-}
-
-.map-radar::after {
-  content: '';
-  position: absolute;
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  border: 1px solid rgba(var(--accent-rgb), 0.4);
-  animation: radar-pulse 3s infinite linear;
-  animation-delay: 1.5s;
-}
-
-@keyframes radar-pulse {
-  0% {
-    transform: scale(0.5);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1.5);
-    opacity: 0;
-  }
-}
-
-.map-center {
-  width: 16px;
-  height: 16px;
-  background-color: var(--accent-color);
-  border: 3px solid #ffffff;
-  border-radius: 50%;
-  box-shadow: 0 0 15px var(--accent-color);
-  z-index: 5;
-}
-
-.map-label {
-  position: absolute;
-  font-family: var(--font-headings);
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--text-secondary);
-  background-color: var(--bg-secondary);
-  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-md);
+  overflow: hidden;
   border: 1px solid var(--border-color);
-  border-radius: 4px;
+  background: var(--bg-tertiary);
 }
 
-.map-label.houston {
-  top: calc(50% - 35px);
-  left: calc(50% - 35px);
-  color: var(--text-primary);
-  font-weight: 900;
-  border-color: var(--accent-color);
+.service-map iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
-
-.map-label.katy { top: 30%; left: 20%; }
-.map-label.woodlands { top: 15%; left: 60%; }
-.map-label.sugarland { top: 70%; left: 25%; }
-.map-label.galveston { top: 75%; left: 75%; }
-.map-label.pasadena { top: 52%; left: 68%; }
 
 .map-details h4 {
   font-size: 1.5rem;
@@ -1469,6 +1406,18 @@ header.scrolled {
 .work-item:focus-visible::after {
   opacity: 1;
   transform: scale(1);
+}
+
+/* Collapsed gallery — show the first 4, reveal the rest with the toggle.
+   Hidden items keep their lazy-loading images unfetched until expanded. */
+.work-gallery.is-collapsed .work-item:nth-child(n+5) {
+  display: none;
+}
+
+.gallery-more {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
 }
 
 /* ----- Lightbox ----- */

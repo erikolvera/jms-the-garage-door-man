@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeaderScroll();
   initMobileMenu();
   initGalleryLightbox();
+  initGalleryToggle();
+  initServiceMap();
   initQuotePlanner();
   initFormValidation();
   initScrollAnimationsFallback();
@@ -113,6 +115,7 @@ const I18N = {
     'opt.maint.lube': 'High-Performance Roller/Spring Lubrication',
     'opt.maint.tighten': 'Structural Bolt & Hinge Tightening',
     'opt.maint.balance': 'Door Balance & Tension Calibration',
+    'opt.other': 'Other',
 
     'service.installation': 'Installation',
     'service.repair': 'Repair',
@@ -134,7 +137,7 @@ const I18N = {
     'why.f4.title': '24/7 Availability',
     'why.f4.desc': 'Garage door springs snap at the worst possible times, locking your car inside. Marlon is on-call 24 hours a day, 7 days a week, ready to get your garage operational immediately.',
     'area.title': 'Service Area',
-    'area.desc': 'Primarily serving Houston, Texas and all surrounding counties — but Marlon travels far, even hours away, for extended road trips to outlying municipalities across East and Southeast Texas.',
+    'area.desc': 'Primarily serving Houston, Texas and all surrounding counties — but Marlon travels far, even hours away.',
 
     'ba.badge': 'Restoration Portfolio',
     'ba.title': 'Before & After <span>Showcase</span>',
@@ -184,6 +187,8 @@ const I18N = {
     'lightbox.close': 'Close',
     'lightbox.prev': 'Previous',
     'lightbox.next': 'Next',
+    'gallery.showMore': 'See more pictures',
+    'gallery.showLess': 'See fewer pictures',
 
     'rev.badge': 'Customer Reviews',
     'rev.title': 'What Our <span>Clients Say</span>',
@@ -292,6 +297,7 @@ const I18N = {
     'opt.maint.lube': 'Lubricación de Alto Rendimiento de Rodillos/Resortes',
     'opt.maint.tighten': 'Ajuste de Tornillos y Bisagras Estructurales',
     'opt.maint.balance': 'Calibración del Balance y la Tensión de la Puerta',
+    'opt.other': 'Otro',
 
     'service.installation': 'Instalación',
     'service.repair': 'Reparación',
@@ -313,7 +319,7 @@ const I18N = {
     'why.f4.title': 'Disponibilidad 24/7',
     'why.f4.desc': 'Los resortes de las puertas se rompen en los peores momentos, dejando su auto encerrado. Marlon está disponible las 24 horas del día, los 7 días de la semana, listo para poner su garaje en funcionamiento de inmediato.',
     'area.title': 'Área de Servicio',
-    'area.desc': 'Atiende principalmente Houston, Texas y todos los condados cercanos, pero Marlon viaja lejos, incluso a horas de distancia, para realizar viajes largos a municipios remotos en el este y sureste de Texas.',
+    'area.desc': 'Atiende principalmente Houston, Texas y todos los condados cercanos, pero Marlon viaja lejos, incluso a horas de distancia.',
 
     'ba.badge': 'Portafolio de Restauración',
     'ba.title': 'Galería <span>Antes y Después</span>',
@@ -363,6 +369,8 @@ const I18N = {
     'lightbox.close': 'Cerrar',
     'lightbox.prev': 'Anterior',
     'lightbox.next': 'Siguiente',
+    'gallery.showMore': 'Ver más fotos',
+    'gallery.showLess': 'Ver menos fotos',
 
     'rev.badge': 'Reseñas de Clientes',
     'rev.title': 'Lo Que Dicen <span>Nuestros Clientes</span>',
@@ -617,6 +625,70 @@ function initGalleryLightbox() {
 }
 
 /**
+ * 3c. Project Gallery "See more" toggle
+ * Collapses the gallery to the first few photos and reveals the rest on click.
+ * Progressive enhancement: without JS the gallery shows every photo and the
+ * button stays hidden.
+ */
+function initGalleryToggle() {
+  const gallery = document.getElementById('work-gallery');
+  const button = document.getElementById('gallery-toggle');
+  if (!gallery || !button) return;
+
+  gallery.classList.add('is-collapsed');
+  button.hidden = false;
+
+  button.addEventListener('click', () => {
+    const collapsed = gallery.classList.toggle('is-collapsed');
+    // Drive the label through data-i18n so applyLang keeps it correct on EN/ES switch
+    const key = collapsed ? 'gallery.showMore' : 'gallery.showLess';
+    button.setAttribute('data-i18n', key);
+    button.textContent = t(key);
+  });
+}
+
+/**
+ * 3d. Service Area Map (lazy)
+ * Injects a real OpenStreetMap iframe only when the Service Area section nears
+ * the viewport, so it never affects initial page load / first paint.
+ */
+function initServiceMap() {
+  const mount = document.getElementById('service-map');
+  if (!mount) return;
+
+  const src = mount.getAttribute('data-map-src');
+  if (!src) return;
+
+  let injected = false;
+  const inject = () => {
+    if (injected) return;
+    injected = true;
+    const iframe = document.createElement('iframe');
+    iframe.src = src;
+    iframe.loading = 'lazy';
+    iframe.title = 'Map of the Houston, Texas service area';
+    iframe.setAttribute('aria-label', mount.getAttribute('aria-label') || 'Service area map');
+    mount.appendChild(iframe);
+  };
+
+  if (!('IntersectionObserver' in window)) {
+    inject();
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        inject();
+        obs.disconnect();
+      }
+    });
+  }, { rootMargin: '200px' });
+
+  observer.observe(mount);
+}
+
+/**
  * 4. Interactive Quote Request Planner
  */
 function initQuotePlanner() {
@@ -642,7 +714,8 @@ function initQuotePlanner() {
       { id: 'opt_opener', key: 'opt.install.opener' },
       { id: 'opt_spring_system', key: 'opt.install.spring' },
       { id: 'opt_keypad', key: 'opt.install.keypad' },
-      { id: 'opt_sensors', key: 'opt.install.sensors' }
+      { id: 'opt_sensors', key: 'opt.install.sensors' },
+      { id: 'opt_install_other', key: 'opt.other' }
     ],
     repair: [
       { id: 'opt_broken_spring', key: 'opt.repair.spring' },
@@ -650,13 +723,15 @@ function initQuotePlanner() {
       { id: 'opt_track', key: 'opt.repair.track' },
       { id: 'opt_opener_repair', key: 'opt.repair.opener' },
       { id: 'opt_rollers', key: 'opt.repair.rollers' },
-      { id: 'opt_panel', key: 'opt.repair.panel' }
+      { id: 'opt_panel', key: 'opt.repair.panel' },
+      { id: 'opt_repair_other', key: 'opt.other' }
     ],
     maintenance: [
       { id: 'opt_inspection', key: 'opt.maint.inspection' },
       { id: 'opt_lube', key: 'opt.maint.lube' },
       { id: 'opt_tighten', key: 'opt.maint.tighten' },
-      { id: 'opt_balance', key: 'opt.maint.balance' }
+      { id: 'opt_balance', key: 'opt.maint.balance' },
+      { id: 'opt_maint_other', key: 'opt.other' }
     ]
   };
 

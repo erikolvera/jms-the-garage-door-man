@@ -133,7 +133,7 @@
               <span class="trust-lbl" data-i18n="hero.trust.custom">Custom Quoted</span>
             </div>
             <div class="trust-item">
-              <span class="trust-num">0$</span>
+              <span class="trust-num">$0</span>
               <span class="trust-lbl" data-i18n="hero.trust.fees">Hidden Fees</span>
             </div>
           </div>
@@ -476,20 +476,14 @@
           </div>
         </div>
 
-        <!-- Radar Service Area Visual -->
+        <!-- Service Area Map (real map, lazy-loaded when scrolled into view) -->
         <div class="map-visual-container scroll-scale" id="service-area-radar">
-          <div class="map-radar">
-            <div class="map-center"></div>
-            <div class="map-label houston">HOUSTON</div>
-            <div class="map-label katy">Katy</div>
-            <div class="map-label woodlands">Woodlands</div>
-            <div class="map-label sugarland">Sugar Land</div>
-            <div class="map-label galveston">Galveston</div>
-            <div class="map-label pasadena">Pasadena</div>
-          </div>
+          <div class="service-map" id="service-map"
+               data-map-src="https://www.openstreetmap.org/export/embed.html?bbox=-96.0%2C29.0%2C-94.8%2C30.4&amp;layer=mapnik&amp;marker=29.7604%2C-95.3698"
+               role="img" aria-label="Map of the Houston, Texas service area"></div>
           <div class="map-details">
             <h4 data-i18n="area.title">Service Area</h4>
-            <p data-i18n="area.desc">Primarily serving Houston, Texas and all surrounding counties — but Marlon travels far, even hours away, for extended road trips to outlying municipalities across East and Southeast Texas.</p>
+            <p data-i18n="area.desc">Primarily serving Houston, Texas and all surrounding counties — but Marlon travels far, even hours away.</p>
           </div>
         </div>
       </div>
@@ -661,6 +655,10 @@
             <img src="assets/IMG_0343.webp" loading="lazy" decoding="async" alt="Matte-black modern door with window lites" data-i18n-alt="g.matteblack">
             <figcaption><span data-i18n="g.matteblack">Matte-black modern door with window lites</span></figcaption>
           </figure>
+        </div>
+
+        <div class="gallery-more">
+          <button id="gallery-toggle" class="btn btn-secondary" type="button" data-i18n="gallery.showMore" hidden>See more pictures</button>
         </div>
       </div>
     </section>
