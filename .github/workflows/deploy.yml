@@ -24,10 +24,7 @@ jobs:
         with:
           node-version: 20
           cache: npm
-      # Skip platform-specific optional deps (sharp's binaries). sharp is only
-      # used by the local `optimize:images` script, never by the Vite build, so
-      # this avoids EBADPLATFORM on the Linux runner.
-      - run: npm ci --omit=optional
+      - run: npm ci
       - run: npm run build
       - uses: actions/configure-pages@v5
         with:
