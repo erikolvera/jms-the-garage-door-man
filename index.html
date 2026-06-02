@@ -20,6 +20,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+  <!-- Preload the LCP hero image so it is discovered before CSS parses -->
+  <link rel="preload" as="image" href="assets/IMG_1043-960.webp"
+        imagesrcset="assets/IMG_1043-640.webp 640w, assets/IMG_1043-960.webp 960w, assets/IMG_1043.webp 1200w"
+        imagesizes="(max-width: 980px) 90vw, 600px" fetchpriority="high">
+
+  <!-- Fonts via a parallel stylesheet link (not @import) so the request is not
+       chained behind styles.css. Unused Inter 300 dropped. -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800;900&display=swap">
+
   <!-- Theme Styles -->
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -133,7 +142,7 @@
 
         <div class="hero-image-wrapper scroll-scale" id="hero-image-container">
           <div class="hero-image-frame">
-            <img src="assets/IMG_1043.webp" width="1200" height="1600" alt="Modern full-view glass garage doors installed by Marlon" id="hero-main-photo" decoding="async">
+            <img src="assets/IMG_1043-960.webp" srcset="assets/IMG_1043-640.webp 640w, assets/IMG_1043-960.webp 960w, assets/IMG_1043.webp 1200w" sizes="(max-width:980px) 90vw, 600px" fetchpriority="high" width="1200" height="1600" alt="Modern full-view glass garage doors installed by Marlon" id="hero-main-photo" decoding="async">
           </div>
           <div class="floating-card" id="hero-floating-card">
             <div class="floating-card-icon">
@@ -143,7 +152,7 @@
               </svg>
             </div>
             <div class="floating-card-info">
-              <h4 data-i18n="hero.card.title">Marlon's Promise</h4>
+              <div class="floating-card-title" data-i18n="hero.card.title">Marlon's Promise</div>
               <p data-i18n="hero.card.desc">Top quality work, no exceptions.</p>
             </div>
           </div>
@@ -164,7 +173,7 @@
           <!-- Card 1: Installation -->
           <div class="service-card scroll-reveal" id="service-card-install">
             <div class="service-card-media">
-              <img src="assets/IMG_8129.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Modern flush garage door with a row of windows" data-i18n-alt="svc.install.alt">
+              <img src="assets/IMG_8129-800.webp" srcset="assets/IMG_8129-400.webp 400w, assets/IMG_8129-800.webp 800w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 33vw" width="1600" height="1200" loading="lazy" decoding="async" alt="Modern flush garage door with a row of windows" data-i18n-alt="svc.install.alt">
             </div>
             <div class="service-card-body">
               <h3 class="service-card-title" data-i18n="svc.install.title">Installation & Upgrades</h3>
@@ -176,7 +185,7 @@
           <!-- Card 2: Repair -->
           <div class="service-card scroll-reveal" id="service-card-repair" style="animation-delay: 0.1s;">
             <div class="service-card-media">
-              <img src="assets/20180212_135929.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Dark-stained arched wood carriage doors" data-i18n-alt="svc.repair.alt">
+              <img src="assets/20180212_135929-800.webp" srcset="assets/20180212_135929-400.webp 400w, assets/20180212_135929-800.webp 800w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 33vw" width="1600" height="900" loading="lazy" decoding="async" alt="Dark-stained arched wood carriage doors" data-i18n-alt="svc.repair.alt">
             </div>
             <div class="service-card-body">
               <h3 class="service-card-title" data-i18n="svc.repair.title">Repairs & Troubleshooting</h3>
@@ -188,7 +197,7 @@
           <!-- Card 3: Maintenance -->
           <div class="service-card scroll-reveal" id="service-card-maintenance" style="animation-delay: 0.2s;">
             <div class="service-card-media">
-              <img src="assets/IMG_7353.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Classic white long-panel garage door" data-i18n-alt="svc.maint.alt">
+              <img src="assets/IMG_7353-800.webp" srcset="assets/IMG_7353-400.webp 400w, assets/IMG_7353-800.webp 800w" sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 33vw" width="1600" height="1200" loading="lazy" decoding="async" alt="Classic white long-panel garage door" data-i18n-alt="svc.maint.alt">
             </div>
             <div class="service-card-body">
               <h3 class="service-card-title" data-i18n="svc.maint.title">Inspections & Tune-ups</h3>
@@ -369,11 +378,11 @@
           <!-- Side-by-side Before / After -->
           <div class="ba-pair scroll-reveal" id="before-after-pair">
             <figure class="ba-card ba-before">
-              <img src="assets/after.webp" width="1206" height="1766" loading="lazy" decoding="async" alt="Before: a worn, dated garage door" data-i18n-alt="ba.alt.before">
+              <img src="assets/after-960.webp" srcset="assets/after-640.webp 640w, assets/after-960.webp 960w, assets/after.webp 1200w" sizes="(max-width:980px) 90vw, 600px" width="1206" height="1766" loading="lazy" decoding="async" alt="Before: a worn, dated garage door" data-i18n-alt="ba.alt.before">
               <figcaption class="ba-label" data-i18n="ba.label.before">Before</figcaption>
             </figure>
             <figure class="ba-card ba-after">
-              <img src="assets/before.webp" width="1500" height="2000" loading="lazy" decoding="async" alt="After: clean, freshly installed garage doors" data-i18n-alt="ba.alt.after">
+              <img src="assets/before-960.webp" srcset="assets/before-640.webp 640w, assets/before-960.webp 960w, assets/before.webp 1200w" sizes="(max-width:980px) 90vw, 600px" width="1500" height="2000" loading="lazy" decoding="async" alt="After: clean, freshly installed garage doors" data-i18n-alt="ba.alt.after">
               <figcaption class="ba-label ba-label-accent" data-i18n="ba.label.after">After</figcaption>
             </figure>
           </div>
@@ -390,103 +399,103 @@
 
         <div class="work-gallery" id="work-gallery">
           <figure class="work-item">
-            <img src="assets/20180212_135929.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Dark-stained arched wood carriage doors" data-i18n-alt="g.darkwood">
+            <img src="assets/20180212_135929-800.webp" srcset="assets/20180212_135929-400.webp 400w, assets/20180212_135929-800.webp 800w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, (max-width:1300px) 33vw, 25vw" data-full="assets/20180212_135929.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Dark-stained arched wood carriage doors" data-i18n-alt="g.darkwood">
             <figcaption><span data-i18n="g.darkwood">Dark-stained arched wood carriage doors</span></figcaption>
           </figure>
           <figure class="work-item">
-            <img src="assets/IMG_6149.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Double garage door with stone trim" data-i18n-alt="g.stone">
+            <img src="assets/IMG_6149-800.webp" srcset="assets/IMG_6149-400.webp 400w, assets/IMG_6149-800.webp 800w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, (max-width:1300px) 33vw, 25vw" data-full="assets/IMG_6149.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Double garage door with stone trim" data-i18n-alt="g.stone">
             <figcaption><span data-i18n="g.stone">Double garage door with stone trim</span></figcaption>
           </figure>
           <figure class="work-item">
-            <img src="assets/IMG_1043.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="Modern full-view glass doors" data-i18n-alt="g.glass2">
+            <img src="assets/IMG_1043-800.webp" srcset="assets/IMG_1043-400.webp 400w, assets/IMG_1043-800.webp 800w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, (max-width:1300px) 33vw, 25vw" data-full="assets/IMG_1043.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="Modern full-view glass doors" data-i18n-alt="g.glass2">
             <figcaption><span data-i18n="g.glass2">Modern full-view glass doors</span></figcaption>
           </figure>
           <figure class="work-item">
-            <img src="assets/20180108_125408.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Three two-tone carriage doors" data-i18n-alt="g.carriage3a">
+            <img src="assets/20180108_125408-800.webp" srcset="assets/20180108_125408-400.webp 400w, assets/20180108_125408-800.webp 800w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, (max-width:1300px) 33vw, 25vw" data-full="assets/20180108_125408.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Three two-tone carriage doors" data-i18n-alt="g.carriage3a">
             <figcaption><span data-i18n="g.carriage3a">Three two-tone carriage doors</span></figcaption>
           </figure>
           <figure class="work-item">
-            <img src="assets/IMG_7353.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Classic white long-panel door" data-i18n-alt="g.whitelong">
+            <img src="assets/IMG_7353-800.webp" srcset="assets/IMG_7353-400.webp 400w, assets/IMG_7353-800.webp 800w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, (max-width:1300px) 33vw, 25vw" data-full="assets/IMG_7353.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Classic white long-panel door" data-i18n-alt="g.whitelong">
             <figcaption><span data-i18n="g.whitelong">Classic white long-panel door</span></figcaption>
           </figure>
           <figure class="work-item">
-            <img src="assets/20170609_142503.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Glass door opening to a poolside" data-i18n-alt="g.glasspool">
+            <img src="assets/20170609_142503-800.webp" srcset="assets/20170609_142503-400.webp 400w, assets/20170609_142503-800.webp 800w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, (max-width:1300px) 33vw, 25vw" data-full="assets/20170609_142503.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Glass door opening to a poolside" data-i18n-alt="g.glasspool">
             <figcaption><span data-i18n="g.glasspool">Glass door opening to a poolside</span></figcaption>
           </figure>
           <figure class="work-item">
-            <img src="assets/IMG_8039.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Wood-grain double door on brick" data-i18n-alt="g.woodgrain">
+            <img src="assets/IMG_8039-800.webp" srcset="assets/IMG_8039-400.webp 400w, assets/IMG_8039-800.webp 800w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, (max-width:1300px) 33vw, 25vw" data-full="assets/IMG_8039.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Wood-grain double door on brick" data-i18n-alt="g.woodgrain">
             <figcaption><span data-i18n="g.woodgrain">Wood-grain double door on brick</span></figcaption>
           </figure>
           <figure class="work-item">
-            <img src="assets/20180213_093348.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Natural cedar barn-style doors" data-i18n-alt="g.cedar">
+            <img src="assets/20180213_093348-800.webp" srcset="assets/20180213_093348-400.webp 400w, assets/20180213_093348-800.webp 800w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, (max-width:1300px) 33vw, 25vw" data-full="assets/20180213_093348.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Natural cedar barn-style doors" data-i18n-alt="g.cedar">
             <figcaption><span data-i18n="g.cedar">Natural cedar barn-style doors</span></figcaption>
           </figure>
           <figure class="work-item">
-            <img src="assets/C86906A0-90F9-4BEF-97D3-3B4D06DE1659.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Twin brown carriage-panel doors" data-i18n-alt="g.brown2">
+            <img src="assets/C86906A0-90F9-4BEF-97D3-3B4D06DE1659-800.webp" srcset="assets/C86906A0-90F9-4BEF-97D3-3B4D06DE1659-400.webp 400w, assets/C86906A0-90F9-4BEF-97D3-3B4D06DE1659-800.webp 800w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, (max-width:1300px) 33vw, 25vw" data-full="assets/C86906A0-90F9-4BEF-97D3-3B4D06DE1659.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Twin brown carriage-panel doors" data-i18n-alt="g.brown2">
             <figcaption><span data-i18n="g.brown2">Twin brown carriage-panel doors</span></figcaption>
           </figure>
           <figure class="work-item">
-            <img src="assets/IMG_8129.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Modern flush door with a window row" data-i18n-alt="g.flush">
+            <img src="assets/IMG_8129-800.webp" srcset="assets/IMG_8129-400.webp 400w, assets/IMG_8129-800.webp 800w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, (max-width:1300px) 33vw, 25vw" data-full="assets/IMG_8129.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Modern flush door with a window row" data-i18n-alt="g.flush">
             <figcaption><span data-i18n="g.flush">Modern flush door with a window row</span></figcaption>
           </figure>
           <figure class="work-item">
-            <img src="assets/20170522_154658.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Custom two-tone carriage door" data-i18n-alt="g.twotone">
+            <img src="assets/20170522_154658-800.webp" srcset="assets/20170522_154658-400.webp 400w, assets/20170522_154658-800.webp 800w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, (max-width:1300px) 33vw, 25vw" data-full="assets/20170522_154658.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Custom two-tone carriage door" data-i18n-alt="g.twotone">
             <figcaption><span data-i18n="g.twotone">Custom two-tone carriage door</span></figcaption>
           </figure>
           <figure class="work-item">
-            <img src="assets/DFDFDB49-800D-43CC-9FB8-2337029B9C66.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Windowed white doors, new build" data-i18n-alt="g.whitewin2">
+            <img src="assets/DFDFDB49-800D-43CC-9FB8-2337029B9C66-800.webp" srcset="assets/DFDFDB49-800D-43CC-9FB8-2337029B9C66-400.webp 400w, assets/DFDFDB49-800D-43CC-9FB8-2337029B9C66-800.webp 800w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, (max-width:1300px) 33vw, 25vw" data-full="assets/DFDFDB49-800D-43CC-9FB8-2337029B9C66.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Windowed white doors, new build" data-i18n-alt="g.whitewin2">
             <figcaption><span data-i18n="g.whitewin2">Windowed white doors, new build</span></figcaption>
           </figure>
           <figure class="work-item">
-            <img src="assets/1D092394-2A8E-4C01-BF55-3A2F6B17EFF6.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Carriage doors with iron hardware" data-i18n-alt="g.carriageiron">
+            <img src="assets/1D092394-2A8E-4C01-BF55-3A2F6B17EFF6-800.webp" srcset="assets/1D092394-2A8E-4C01-BF55-3A2F6B17EFF6-400.webp 400w, assets/1D092394-2A8E-4C01-BF55-3A2F6B17EFF6-800.webp 800w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, (max-width:1300px) 33vw, 25vw" data-full="assets/1D092394-2A8E-4C01-BF55-3A2F6B17EFF6.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Carriage doors with iron hardware" data-i18n-alt="g.carriageiron">
             <figcaption><span data-i18n="g.carriageiron">Carriage doors with iron hardware</span></figcaption>
           </figure>
           <figure class="work-item">
-            <img src="assets/IMG_4330.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Almond raised-panel double door" data-i18n-alt="g.almond">
+            <img src="assets/IMG_4330-800.webp" srcset="assets/IMG_4330-400.webp 400w, assets/IMG_4330-800.webp 800w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, (max-width:1300px) 33vw, 25vw" data-full="assets/IMG_4330.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Almond raised-panel double door" data-i18n-alt="g.almond">
             <figcaption><span data-i18n="g.almond">Almond raised-panel double door</span></figcaption>
           </figure>
           <figure class="work-item">
-            <img src="assets/E51B5FC2-0677-4CF5-AB7D-9EAB598BDD55.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Contemporary frosted-glass door" data-i18n-alt="g.frosted">
+            <img src="assets/E51B5FC2-0677-4CF5-AB7D-9EAB598BDD55-800.webp" srcset="assets/E51B5FC2-0677-4CF5-AB7D-9EAB598BDD55-400.webp 400w, assets/E51B5FC2-0677-4CF5-AB7D-9EAB598BDD55-800.webp 800w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, (max-width:1300px) 33vw, 25vw" data-full="assets/E51B5FC2-0677-4CF5-AB7D-9EAB598BDD55.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Contemporary frosted-glass door" data-i18n-alt="g.frosted">
             <figcaption><span data-i18n="g.frosted">Contemporary frosted-glass door</span></figcaption>
           </figure>
           <figure class="work-item">
-            <img src="assets/IMG_4647.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="White raised-panel door, new construction" data-i18n-alt="g.whitenew">
+            <img src="assets/IMG_4647-800.webp" srcset="assets/IMG_4647-400.webp 400w, assets/IMG_4647-800.webp 800w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, (max-width:1300px) 33vw, 25vw" data-full="assets/IMG_4647.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="White raised-panel door, new construction" data-i18n-alt="g.whitenew">
             <figcaption><span data-i18n="g.whitenew">White raised-panel door, new construction</span></figcaption>
           </figure>
           <figure class="work-item">
-            <img src="assets/BC33962D-1056-4B7F-AA13-975AE37EEB58.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Three-car carriage door set" data-i18n-alt="g.carriage3b">
+            <img src="assets/BC33962D-1056-4B7F-AA13-975AE37EEB58-800.webp" srcset="assets/BC33962D-1056-4B7F-AA13-975AE37EEB58-400.webp 400w, assets/BC33962D-1056-4B7F-AA13-975AE37EEB58-800.webp 800w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, (max-width:1300px) 33vw, 25vw" data-full="assets/BC33962D-1056-4B7F-AA13-975AE37EEB58.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Three-car carriage door set" data-i18n-alt="g.carriage3b">
             <figcaption><span data-i18n="g.carriage3b">Three-car carriage door set</span></figcaption>
           </figure>
           <figure class="work-item">
-            <img src="assets/IMG_1041.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="Full-view glass door, interior view" data-i18n-alt="g.glassint">
+            <img src="assets/IMG_1041-800.webp" srcset="assets/IMG_1041-400.webp 400w, assets/IMG_1041-800.webp 800w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, (max-width:1300px) 33vw, 25vw" data-full="assets/IMG_1041.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="Full-view glass door, interior view" data-i18n-alt="g.glassint">
             <figcaption><span data-i18n="g.glassint">Full-view glass door, interior view</span></figcaption>
           </figure>
           <figure class="work-item">
-            <img src="assets/IMG_20180503_173039.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Arched two-tone carriage doors" data-i18n-alt="g.arched">
+            <img src="assets/IMG_20180503_173039-800.webp" srcset="assets/IMG_20180503_173039-400.webp 400w, assets/IMG_20180503_173039-800.webp 800w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, (max-width:1300px) 33vw, 25vw" data-full="assets/IMG_20180503_173039.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Arched two-tone carriage doors" data-i18n-alt="g.arched">
             <figcaption><span data-i18n="g.arched">Arched two-tone carriage doors</span></figcaption>
           </figure>
           <figure class="work-item">
-            <img src="assets/9527D6CA-4E02-4390-94CA-0B0332C0BF40.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Espresso short-panel double door" data-i18n-alt="g.espresso">
+            <img src="assets/9527D6CA-4E02-4390-94CA-0B0332C0BF40-800.webp" srcset="assets/9527D6CA-4E02-4390-94CA-0B0332C0BF40-400.webp 400w, assets/9527D6CA-4E02-4390-94CA-0B0332C0BF40-800.webp 800w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, (max-width:1300px) 33vw, 25vw" data-full="assets/9527D6CA-4E02-4390-94CA-0B0332C0BF40.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Espresso short-panel double door" data-i18n-alt="g.espresso">
             <figcaption><span data-i18n="g.espresso">Espresso short-panel double door</span></figcaption>
           </figure>
           <figure class="work-item">
-            <img src="assets/IMG_8118.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="White raised-panel install" data-i18n-alt="g.whiteraised">
+            <img src="assets/IMG_8118-800.webp" srcset="assets/IMG_8118-400.webp 400w, assets/IMG_8118-800.webp 800w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, (max-width:1300px) 33vw, 25vw" data-full="assets/IMG_8118.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="White raised-panel install" data-i18n-alt="g.whiteraised">
             <figcaption><span data-i18n="g.whiteraised">White raised-panel install</span></figcaption>
           </figure>
           <figure class="work-item">
-            <img src="assets/4A9DEA22-27F7-4931-BB71-5E586ADA3F9A.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="White door with top window lites" data-i18n-alt="g.whitewin1">
+            <img src="assets/4A9DEA22-27F7-4931-BB71-5E586ADA3F9A-800.webp" srcset="assets/4A9DEA22-27F7-4931-BB71-5E586ADA3F9A-400.webp 400w, assets/4A9DEA22-27F7-4931-BB71-5E586ADA3F9A-800.webp 800w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, (max-width:1300px) 33vw, 25vw" data-full="assets/4A9DEA22-27F7-4931-BB71-5E586ADA3F9A.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="White door with top window lites" data-i18n-alt="g.whitewin1">
             <figcaption><span data-i18n="g.whitewin1">White door with top window lites</span></figcaption>
           </figure>
           <figure class="work-item">
-            <img src="assets/1BD49FA0-2327-4735-AE12-6C1FCCFA173F.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Contemporary frosted-panel doors" data-i18n-alt="g.frostedpanel">
+            <img src="assets/1BD49FA0-2327-4735-AE12-6C1FCCFA173F-800.webp" srcset="assets/1BD49FA0-2327-4735-AE12-6C1FCCFA173F-400.webp 400w, assets/1BD49FA0-2327-4735-AE12-6C1FCCFA173F-800.webp 800w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, (max-width:1300px) 33vw, 25vw" data-full="assets/1BD49FA0-2327-4735-AE12-6C1FCCFA173F.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Contemporary frosted-panel doors" data-i18n-alt="g.frostedpanel">
             <figcaption><span data-i18n="g.frostedpanel">Contemporary frosted-panel doors</span></figcaption>
           </figure>
           <figure class="work-item">
-            <img src="assets/46557202-B95F-4B41-AA6A-5431F7F69A84.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="White carriage door with windows" data-i18n-alt="g.whitewin3">
+            <img src="assets/46557202-B95F-4B41-AA6A-5431F7F69A84-800.webp" srcset="assets/46557202-B95F-4B41-AA6A-5431F7F69A84-400.webp 400w, assets/46557202-B95F-4B41-AA6A-5431F7F69A84-800.webp 800w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, (max-width:1300px) 33vw, 25vw" data-full="assets/46557202-B95F-4B41-AA6A-5431F7F69A84.webp" width="1200" height="1600" loading="lazy" decoding="async" alt="White carriage door with windows" data-i18n-alt="g.whitewin3">
             <figcaption><span data-i18n="g.whitewin3">White carriage door with windows</span></figcaption>
           </figure>
           <figure class="work-item">
-            <img src="assets/IMG_0343.webp" width="526" height="324" loading="lazy" decoding="async" alt="Matte-black modern door with window lites" data-i18n-alt="g.matteblack">
+            <img src="assets/IMG_0343-800.webp" srcset="assets/IMG_0343-400.webp 400w, assets/IMG_0343-800.webp 800w" sizes="(max-width:600px) 100vw, (max-width:900px) 50vw, (max-width:1300px) 33vw, 25vw" data-full="assets/IMG_0343.webp" width="526" height="324" loading="lazy" decoding="async" alt="Matte-black modern door with window lites" data-i18n-alt="g.matteblack">
             <figcaption><span data-i18n="g.matteblack">Matte-black modern door with window lites</span></figcaption>
           </figure>
         </div>

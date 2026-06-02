@@ -477,7 +477,9 @@ function initGalleryLightbox() {
     if (!item) return;
     const img = item.querySelector('img');
     const caption = item.querySelector('figcaption');
-    lbImg.src = img.currentSrc || img.src;
+    // Prefer the full-resolution original (data-full) over the small srcset
+    // variant the grid resolved to, so the lightbox shows a crisp image.
+    lbImg.src = img.dataset.full || img.currentSrc || img.src;
     lbImg.alt = img.alt || '';
     lbCaption.textContent = caption ? caption.textContent.trim() : '';
     currentIndex = index;

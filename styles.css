@@ -2,8 +2,8 @@
    JMS Garage Door Man - Design System & Custom Stylesheet
    ========================================================================== */
 
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+/* Google Fonts are loaded via a parallel <link> in index.html <head> (not an
+   @import here, which would chain the request behind this stylesheet's download). */
 
 /* CSS Custom Properties (Design Tokens) */
 :root {
@@ -49,6 +49,12 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+/* Honor the `hidden` attribute even on elements that set `display` (e.g. .btn).
+   Without this, the JS-toggled gallery "Show less" button renders as an empty box. */
+[hidden] {
+  display: none !important;
 }
 
 html {
@@ -587,9 +593,10 @@ header.scrolled {
   font-size: 1.25rem;
 }
 
-.floating-card-info h4 {
+.floating-card-info .floating-card-title {
   font-size: 0.95rem;
   font-weight: 700;
+  color: var(--text-primary);
 }
 
 .floating-card-info p {
@@ -1488,12 +1495,14 @@ footer {
 .footer-links {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.25rem;
 }
 
 .footer-links a {
   color: #cbd5e1;
   font-size: 0.95rem;
+  display: inline-block;
+  padding: 0.4rem 0; /* larger tap target for mobile (>=24px) */
 }
 
 .footer-links a:hover {
