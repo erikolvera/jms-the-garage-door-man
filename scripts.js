@@ -1,5 +1,5 @@
 /* ==========================================================================
-   JMS Garage Door Man - Interactive Website Logic
+   JMS - The Garage Door Man — Interactive Website Logic
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -27,8 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 const I18N = {
   en: {
-    'meta.title': 'JMS Garage Door Man | 24/7 Professional Garage Door & Opener Repair Houston',
-    'meta.description': "JMS Garage Door Man offers professional, 24/7 garage door installation, spring replacement, opener repair, and maintenance. We primarily serve Houston, but travel far — even hours away — for the job. Call or text 409-934-2301 today for a custom quote!",
+    'meta.title': 'JMS - The Garage Door Man | 24/7 Professional Garage Door & Opener Repair Houston',
+    'meta.description': "JMS - The Garage Door Man offers professional, 24/7 garage door installation, spring replacement, opener repair, and maintenance. We primarily serve Houston, but travel far — even hours away — for the job. Call or text 409-934-2301 today for a custom quote!",
 
     'nav.home': 'Home',
     'nav.services': 'Services',
@@ -150,7 +150,7 @@ const I18N = {
     'rev.badge': 'Customer Reviews',
     'rev.title': 'What Our <span>Clients Say</span>',
     'rev.subtitle': 'Read feedback from homeowners around Houston who trust JMS for their emergency repairs and door upgrades.',
-    'rev.t1.text': '"My garage door spring snapped at 10 PM on a Sunday night, locking my car inside before a major flight. I called JMS Garage Door Man, and they were at my house in Houston within 45 minutes. They fixed the spring, lubricated the rollers, and charged a very fair price. Absolutely life-saving service!"',
+    'rev.t1.text': '"My garage door spring snapped at 10 PM on a Sunday night, locking my car inside before a major flight. I called JMS - The Garage Door Man, and they were at my house in Houston within 45 minutes. They fixed the spring, lubricated the rollers, and charged a very fair price. Absolutely life-saving service!"',
     'rev.t2.text': "\"JMS installed a new matte glass panel garage door for our modern home rebuild. Other companies refused to drive out to our rural property, but they didn't hesitate. The installation is flawless, incredibly quiet, and completely transformed the front of our house. Highest recommendation!\"",
     'rev.t3.text': '"My garage door opener motor was making a terrible grinding sound and wouldn\'t lift the door. JMS came out, diagnosed a stripped plastic gear, and replaced it in under an hour instead of selling me an expensive new motor like other companies tried to do. Honesty is rare these days!"',
 
@@ -159,15 +159,15 @@ const I18N = {
     'footer.contact.title': 'Contact JMS',
     'footer.hours': 'Available 24/7 for Emergencies',
     'footer.area': 'Primarily Houston & surrounding areas — we travel hours away for larger jobs',
-    'footer.copyright': '© 2026 JMS Garage Door Man. All Rights Reserved.',
+    'footer.copyright': '© 2026 JMS - The Garage Door Man. All Rights Reserved.',
     'footer.bottom': 'Owned and Operated by JMS | Call or Text <a href="tel:+14099342301" style="color: var(--accent-color); font-weight: 700;">409-934-2301</a>',
 
     'lang.toggleLabel': 'Español'
   },
 
   es: {
-    'meta.title': 'JMS Garage Door Man | Reparación Profesional de Puertas de Garaje 24/7 en Houston',
-    'meta.description': 'JMS Garage Door Man ofrece instalación, reemplazo de resortes, reparación de motores y mantenimiento de puertas de garaje las 24 horas. Atendemos principalmente Houston, pero viajamos lejos, incluso a horas de distancia. ¡Llame o envíe un mensaje al 409-934-2301 hoy para una cotización personalizada!',
+    'meta.title': 'JMS - The Garage Door Man | Reparación Profesional de Puertas de Garaje 24/7 en Houston',
+    'meta.description': 'JMS - The Garage Door Man ofrece instalación, reemplazo de resortes, reparación de motores y mantenimiento de puertas de garaje las 24 horas. Atendemos principalmente Houston, pero viajamos lejos, incluso a horas de distancia. ¡Llame o envíe un mensaje al 409-934-2301 hoy para una cotización personalizada!',
 
     'nav.home': 'Inicio',
     'nav.services': 'Servicios',
@@ -289,7 +289,7 @@ const I18N = {
     'rev.badge': 'Reseñas de Clientes',
     'rev.title': 'Lo Que Dicen <span>Nuestros Clientes</span>',
     'rev.subtitle': 'Lea los comentarios de propietarios de toda el área de Houston que confían en JMS para sus reparaciones de emergencia y mejoras de puertas.',
-    'rev.t1.text': '"El resorte de mi puerta de garaje se rompió a las 10 PM un domingo por la noche, dejando mi auto encerrado antes de un vuelo importante. Llamé a JMS Garage Door Man, y llegaron a mi casa en Houston en menos de 45 minutos. Arreglaron el resorte, lubricaron los rodillos y cobraron un precio muy justo. ¡Un servicio que me salvó la vida!"',
+    'rev.t1.text': '"El resorte de mi puerta de garaje se rompió a las 10 PM un domingo por la noche, dejando mi auto encerrado antes de un vuelo importante. Llamé a JMS - The Garage Door Man, y llegaron a mi casa en Houston en menos de 45 minutos. Arreglaron el resorte, lubricaron los rodillos y cobraron un precio muy justo. ¡Un servicio que me salvó la vida!"',
     'rev.t2.text': '"JMS instaló una nueva puerta de garaje de paneles de vidrio mate para la remodelación de nuestra casa moderna. Otras compañías se negaron a venir a nuestra propiedad rural, pero ellos no dudaron. La instalación es impecable, increíblemente silenciosa y transformó por completo el frente de nuestra casa. ¡La más alta recomendación!"',
     'rev.t3.text': '"El motor del abridor de mi puerta de garaje hacía un ruido terrible y no levantaba la puerta. JMS vino, diagnosticó un engranaje de plástico desgastado y lo reemplazó en menos de una hora, en lugar de venderme un motor nuevo y caro como intentaron otras compañías. ¡La honestidad es rara en estos días!"',
 
@@ -298,7 +298,7 @@ const I18N = {
     'footer.contact.title': 'Contactar a JMS',
     'footer.hours': 'Disponible 24/7 para Emergencias',
     'footer.area': 'Principalmente Houston y áreas cercanas — viajamos a horas de distancia para trabajos grandes',
-    'footer.copyright': '© 2026 JMS Garage Door Man. Todos los Derechos Reservados.',
+    'footer.copyright': '© 2026 JMS - The Garage Door Man. Todos los Derechos Reservados.',
     'footer.bottom': 'Propiedad y Operado por JMS | Llame o Envíe un Mensaje al <a href="tel:+14099342301" style="color: var(--accent-color); font-weight: 700;">409-934-2301</a>',
 
     'lang.toggleLabel': 'English'
