@@ -39,7 +39,7 @@ const I18N = {
 
     'hero.badge': '24/7 Professional Dispatch',
     'hero.title': 'No Job Too Far. <span>No Repair Too Complex.</span>',
-    'hero.desc': 'Owned and operated by <strong>JMS</strong>. JMS provides top-tier repairs, flawless installations, and comprehensive tune-ups. While we primarily serve the Houston area, we gladly travel far — even hours away — to get the job done right, quoting every job custom-tailored to your exact situation to guarantee the lowest price.',
+    'hero.desc': '<strong>JMS</strong> provides top-tier repairs, flawless installations, and comprehensive tune-ups. While we primarily serve the Houston area, we gladly travel far — even hours away — to get the job done right, quoting every job custom-tailored to your exact situation to guarantee the lowest price.',
     'hero.cta.quote': 'Get Custom Quote',
     'hero.cta.call': 'Call Us!',
     'hero.trust.emergency': 'Emergency Service',
@@ -178,7 +178,7 @@ const I18N = {
 
     'hero.badge': 'Despacho Profesional 24/7',
     'hero.title': 'Ningún Trabajo Muy Lejos. <span>Ninguna Reparación Muy Compleja.</span>',
-    'hero.desc': 'Propiedad y operado por <strong>JMS</strong>. JMS ofrece reparaciones de primer nivel, instalaciones impecables y mantenimientos completos. Aunque atendemos principalmente el área de Houston, con gusto viajamos lejos — incluso a horas de distancia — para hacer bien el trabajo, cotizando cada proyecto según su situación exacta para garantizar el mejor precio.',
+    'hero.desc': '<strong>JMS</strong> ofrece reparaciones de primer nivel, instalaciones impecables y mantenimientos completos. Aunque atendemos principalmente el área de Houston, con gusto viajamos lejos — incluso a horas de distancia — para hacer bien el trabajo, cotizando cada proyecto según su situación exacta para garantizar el mejor precio.',
     'hero.cta.quote': 'Obtener Cotización',
     'hero.cta.call': '¡Llámenos!',
     'hero.trust.emergency': 'Servicio de Emergencia',
