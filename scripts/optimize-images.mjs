@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Image optimizer for JMS Garage Door Man
+   Image optimizer for JMS Garage Door Men
    --------------------------------------------------------------------------
    Generates web-ready WebP copies of every photo in assets/.
    - Auto-orients (bakes EXIF rotation into pixels, so output is upright

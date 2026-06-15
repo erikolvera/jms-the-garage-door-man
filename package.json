@@ -2,7 +2,7 @@
   "name": "jms-garage-services",
   "version": "1.0.0",
   "private": true,
-  "description": "Website for JMS Garage Door Man",
+  "description": "Website for JMS Garage Door Men",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

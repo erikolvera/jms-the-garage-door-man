@@ -1,5 +1,5 @@
 /* ==========================================================================
-   JMS - The Garage Door Man — Design System & Custom Stylesheet
+   JMS - The Garage Door Men — Design System & Custom Stylesheet
    ========================================================================== */
 
 /* Google Fonts are loaded via a parallel <link> in index.html <head> (not an
@@ -1421,6 +1421,72 @@ header.scrolled {
 .user-info p {
   font-size: 0.8rem;
   color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Reviews page — empty state, star-rating input, submit status
+   ========================================================================== */
+
+.reviews-empty {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  padding: 2rem 0 1rem;
+}
+
+.reviews-cta {
+  margin-top: 2.5rem;
+}
+
+/* Accessible star rating: reversed flex so CSS sibling selectors can light up
+   the hovered/checked star and everything before it. */
+.rating-input {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 0.25rem;
+  font-size: 1.9rem;
+  line-height: 1;
+}
+
+.rating-input input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.rating-input label {
+  color: var(--border-color);
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.rating-input label:hover,
+.rating-input label:hover ~ label,
+.rating-input input:checked ~ label {
+  color: #ffb700;
+}
+
+.rating-input input:focus-visible + label {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.review-status {
+  margin-top: 1.25rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.review-status.is-success {
+  color: var(--success-color);
+}
+
+.review-status.is-error {
+  color: var(--error-color);
 }
 
 /* ==========================================================================

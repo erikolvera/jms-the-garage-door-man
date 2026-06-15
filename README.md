@@ -1,6 +1,6 @@
-# JMS - The Garage Door Man
+# JMS - The Garage Door Men
 
-Marketing website for **JMS - The Garage Door Man** — a garage door installation, repair,
+Marketing website for **JMS - The Garage Door Men** — a garage door installation, repair,
 and maintenance business serving the Houston, TX area (and traveling far for larger jobs).
 Residential and commercial — we do it all.
 
