@@ -115,8 +115,8 @@
         </div>
 
         <div class="quote-wrapper scroll-reveal" id="review-form-wrapper">
-          <!-- Replace REPLACE_ME with your Formspree form ID (https://formspree.io). -->
-          <form id="review-form" action="https://formspree.io/f/REPLACE_ME" method="POST" novalidate>
+          <!-- Formspree endpoint. Submissions are emailed to the owner for moderation. -->
+          <form id="review-form" action="https://formspree.io/f/mnjyykgj" method="POST" novalidate>
             <div class="form-grid">
               <div class="field">
                 <label for="review_name" data-i18n="reviews.form.name">Your name</label>
@@ -146,6 +146,9 @@
               <textarea id="review_text" name="review" rows="5" data-i18n-placeholder="reviews.form.review.ph"
                 placeholder="Tell us about the work we did for you…" required maxlength="1500"></textarea>
             </div>
+
+            <!-- Subject line for the owner's notification email. -->
+            <input type="hidden" name="_subject" value="New website review — JMS - The Garage Door Men">
 
             <!-- Honeypot: hidden from humans, bots tend to fill it. Submissions with a value are dropped. -->
             <input type="text" name="_gotcha" id="review-honeypot" tabindex="-1" autocomplete="off"
